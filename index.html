@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexhop - Accueil</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .main-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      gap: 30px;
+    }
+    .main-screen button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: #000;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    .main-screen button:hover {
+      background-color: #333;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f8f8;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+    .navbar input[type="text"] {
+      width: 60%;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 200px;
+      height: calc(100% - 60px);
+      background-color: #f0f0f0;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      color: #000;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #ddd;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      margin-left: 220px;
+    }
+    .video {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fafafa;
+    }
+    .video img {
+      width: 100%;
+      height: auto;
+    }
+    .video .info {
+      padding: 10px;
+    }
+    .video .info h4 {
+      margin: 5px 0;
+    }
+    .video .info button {
+      margin-right: 5px;
+      margin-top: 5px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .video .info button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Bienvenue chez Flexhop - pour les plus de 10 ans</header>
+
+  <div class="main-screen" id="home-screen">
+    <button onclick="alert('Importation d\'une vidéo...')">📤 Importer une vidéo</button>
+    <button onclick="showVideoScreen()">▶️ Regarder des vidéos</button>
+  </div>
+
+  <div id="video-screen" style="display: none;">
+    <div class="navbar">
+      <input type="text" placeholder="Rechercher des vidéos...">
+      <div>
+        <button>🔔</button>
+        <button>👤</button>
+      </div>
+    </div>
+    <div class="sidebar">
+      <a href="#">🏠 Accueil</a>
+      <a href="#">🎬 Shorts</a>
+      <a href="#">⬇️ Téléchargements</a>
+      <a href="#">👥 Abonnés</a>
+      <a href="#">👤 Abonnement</a>
+    </div>
+    <div class="video-grid">
+      <div class="video">
+        <img src="https://via.placeholder.com/300x180.png?text=Vid%C3%A9o+1" alt="Vidéo 1">
+        <div class="info">
+          <h4>Titre de la vidéo 1</h4>
+          <p>Par Utilisateur1</p>
+          <button>👍 J'aime</button>
+          <button>💬 Commenter</button>
+          <button>🔄 Partager</button>
+        </div>
+      </div>
+      <div class="video">
+        <img src="https://via.placeholder.com/300x180.png?text=Vid%C3%A9o+2" alt="Vidéo 2">
+        <div class="info">
+          <h4>Titre de la vidéo 2</h4>
+          <p>Par Utilisateur2</p>
+          <button>👍 J'aime</button>
+          <button>💬 Commenter</button>
+          <button>🔄 Partager</button>
+        </div>
+      </div>
+      <div class="video">
+        <img src="https://via.placeholder.com/300x180.png?text=Vid%C3%A9o+3" alt="Vidéo 3">
+        <div class="info">
+          <h4>Titre de la vidéo 3</h4>
+          <p>Par Utilisateur3</p>
+          <button>👍 J'aime</button>
+          <button>💬 Commenter</button>
+          <button>🔄 Partager</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showVideoScreen() {
+      document.getElementById('home-screen').style.display = 'none';
+      document.getElementById('video-screen').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
